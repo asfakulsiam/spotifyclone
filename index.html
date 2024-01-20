@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Montserrat', sans-serif;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/output/style.css">
+</head>
+<body style="background-color: #000;">
+    <!-- skeleton structure started from here -->
+    <div id="main" class="w-screen h-[88vh] flex">
+        <header class="w-[28%] h-full">
+            <!-- home and search section start from here -->
+            <section class="w-cale[100%-8] mx-2 my-2 h-[20%] bg-[#121212] rounded-xl flex flex-col justify-center text-white">
+                <ul class="font-semibold">
+                    <li class="m-7"><a href="#"><span class="pr-5"><i class="fa-solid fa-house text-xl"></i></span>Home</a></li>
+                    <li class="m-7 "><a class="text-[#919191] hover:text-white transition ease-in-out duration-300" href="#"><span class="pr-5"><i class="fa-solid fa-magnifying-glass text-xl"></i></span>Search</a></li>
+                </ul>
+            </section>
+            <!-- home and search section end here -->
+
+            <!-- sidebar 2nd part start from here -->
+            <section class="w-cale[100%-8] mx-2 h-[78%] bg-[#121212] rounded-xl text-[#919191] font-semibold">
+                <!-- library section start from here -->
+                <div class="w-[100%] h-[10%] flex justify-between items-center">
+                    <div class="ml-7 group flex-1 ">
+                        <a class="flex items-center group-hover:text-white transition ease-in-out duration-300" href="#"><img class="max-w-[10%] h-auto mr-4 opacity-[55%] group-hover:opacity-[100%] transition ease-in-out duration-300" src="/assets/library_icon.png" alt="library">Your Library</a>
+                    </div>
+                    <div class="button flex-1 text-right mr-2">
+                        <button class="mr-1 h-[35px] w-[35px] rounded-[50%] hover:bg-[#242424] hover:text-white  transition ease-in-out duration-300"><i class="fa-solid fa-plus"></i></button>
+                        <button class="h-[35px] w-[35px] rounded-[50%] hover:bg-[#242424] hover:text-white transition ease-in-out duration-300"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- library section end here -->
+
+                <!-- sidebar card section start from here  -->
+                <div class="sidebarCardone w-cale[100%-16] h-[28%] m-2 bg-[#242424] rounded-lg pl-7 pt-5 text-white">
+                    <h4>Create your first playlist</h4>
+                    <p class="text-[13px] pt-2 font-medium">It's easy, we'll help you</p>
+                    <button class="bg-white text-black rounded-full px-4 py-[6px] mt-4 text-[13px] font-semibold hover:scale-105">Create playlist</button>
+                </div>
+                <div class="sidebarCardone2 w-cale[100%-16] h-[28%] m-2 mt-4 bg-[#242424] rounded-lg pl-7 pt-5 text-white">
+                    <h4>Let's find some podcasts to follow</h4>
+                    <p class="text-[13px] pt-2 font-medium">We'll keep you updated on new episodes</p>
+                    <button class="bg-white text-black rounded-full px-4 py-[6px] mt-4 text-[13px] font-semibold hover:scale-105">Browse podcasts</button>
+                </div>
+                <!-- sidebar card section end here  -->
+            </section> 
+        </header>
+        <!-- header part end here -->
+
+        <!-- sticky nav start from here -->
+        <nav class="flex-1 h-[100%] mb-1 mr-2 mt-2"> 
+            <section class="h-[10%] bg-[#121212] rounded-t-xl text-white sticky flex justify-between items-center">
+                <div class="arrow pl-7">
+                    <button class="bg-[#0b0b0b] rounded-full p-2 cursor-not-allowed"><img class="w-5 h-5" src="/assets/backward_icon.png" alt="backward_icon"></button>
+                    <button class="bg-[#0b0b0b] rounded-full p-2 cursor-not-allowed"><img class="w-5 h-5" src="/assets/forward_icon.png" alt="forward_icon"></button>
+                </div>
+                <div class="otheres text-end pr-7">
+                    <button class="bg-white text-black rounded-full px-4 py-[6px] mt-4 text-[13px] font-semibold hover:scale-105">Explore Premium</button>
+                    <button class="bg-[#0b0b0b] text-white rounded-full px-4 py-[6px] mt-4 text-[13px] font-semibold hover:scale-105"><span class="pr-2"><i class="fa-regular fa-circle-down"></i></span>Install App</button>
+                    <a class="rounded-full text-[#919191] bg-[#0b0b0b] p-2 text-center hover:text-white" href="#"><i class="fa-regular fa-bell w-5 h-5 hover:scale-105"></i></a>
+                    <a class="rounded-full text-white bg-[#0b0b0b] p-2 text-center" href="#"><i class="fa-regular fa-user w-5 h-5 hover:scale-105"></i></a>
+                </div>
+            </section>
+            <!-- sticky nav end here -->
+
+            <!-- music section start from here -->
+            <section class="h-[90%] bg-[#121212] rounded-b-xl text-white pl-7 pr-7 overflow-y-scroll">
+                <div class="featurd-chart">
+                    <h1 class="text-2xl font-bold">Recently Played</h1>
+                </div>
+                <div class="group recent-played w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                    <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                        <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                        <div class="p-3">
+                            <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                <img class="w-[100%] rounded-lg" src="/assets/card1img.jpeg" alt="top_50_global">
+                                <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                            </div>
+                            <h4 class="text-sm font-semibold">Top 50 - Global</h4>
+                            <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- try something -->
+                <div class="featurd-chart flex justify-between items-center">
+                    <a class="text-2xl font-bold hover:underline" href="#">Fresh new music</a>
+                    <a class="sm font-semibold hover:underline text-[13px] decoration-1 text-[#919191] mt-5" href="#">Show all</a>
+                </div>
+                <div class="flex-boxes flex justify-between flex-wrap">
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card2img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Emotional</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card3img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Romantic</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card4img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Sad</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card5img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Global</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card6img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - India</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- fresh new music -->
+                <div class="featurd-chart flex justify-between items-center">
+                    <a class="text-2xl font-bold hover:underline" href="#">Try Something</a>
+                    <a class="sm font-semibold hover:underline text-[13px] decoration-1 text-[#919191] mt-5" href="#">Show all</a>
+                </div>
+                <div class="flex-boxes flex justify-between flex-wrap">
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card2img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Emotional</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card3img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Romantic</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card4img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Sad</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card5img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - Global</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group try-something w-[18%] h-[280px] bg-[#161616] mt-5 mb-5 rounded-lg overflow-hidden hover:cursor-pointer">
+                        <div class="card-container w-full h-full group-hover:bg-[#242424] relative">
+                            <div class="style w-full h-full absolute left-0 bottom-0  bg-transparent transform translate-y-full group-hover:translate-y-0 transition ease-in-out duration-300 "></div>
+                            <div class="p-3">
+                                <div class="image-button relative overflow-hidden w-full h-[175px] mb-3">
+                                    <img class="w-[100%] rounded-lg" src="/assets/card6img.jpeg" alt="top_50_global">
+                                    <button class="rounded-full bg-green-600 text-black p-1 hover:scale-105 absolute top-[60%] right-[10%] w-[50px] h-[50px] transform translate-y-[300px] group-hover:translate-y-0 transition ease-in-out duration-300"><i class="fa-solid fa-play"></i></button>
+                                </div>
+                                <h4 class="text-sm font-semibold">Top 50 - India</h4>
+                                <p class="text-[13px] pt-2 text-[#919191] font-semibold">Your daily updates of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- footer section start from here -->
+                <div class="footer-first mt-14 mb-11 pb-11 flex justify-between border-b border-solid border-custom-gray">
+                    <div class="company w-[200px]">
+                        <h4 class="text-sm font-semibold">Company</h4>
+                        <div class="ancor flex flex-col text-start">
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">About</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Jobs</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">For the Record</a>
+                        </div>
+                    </div>
+                    <div class="comunication w-[200px]">
+                        <h4 class="text-sm font-semibold">Communities</h4>
+                        <div class="ancor flex flex-col text-start">
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">For Artist</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Developer</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Advertising</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Investor</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Vendor</a>
+                        </div>
+                    </div>
+                    <div class="useful-links w-[200px]">
+                        <h4 class="text-sm font-semibold">Useful links</h4>
+                        <div class="ancor flex flex-col text-start">
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Support</a>
+                            <a class="text-[#919191] text-[13px] py-1 hover:underline hover:text-white inline-block font-semibold transition ease-in-out duration-300" href="#">Free mobile App</a>
+                        </div>
+                    </div>
+                    <div class="social meida flex-1">
+                        <div class="social-icon text-end">
+                            <button class="mr-1 h-[35px] w-[35px] rounded-[50%] bg-[#252525] hover:text-white hover:bg-[#504e4e] transition ease-in-out duration-300"><i class="fa-brands fa-instagram"></i></button>
+                            <button class="h-[35px] w-[35px] rounded-[50%] bg-[#252525] hover:text-white hover:bg-[#504e4e] transition ease-in-out duration-300"><i class="fa-brands fa-twitter"></i></button>
+                            <button class="h-[35px] w-[35px] rounded-[50%] bg-[#252525] hover:text-white hover:bg-[#504e4e] transition ease-in-out duration-300"><i class="fa-brands fa-facebook"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- privacy policy -->
+                <div class="privacy-policy mb-24 flex justify-between ">
+                    <div class="privacy flex">
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">Legal</a>
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">Privacy Center</a>
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">Privacy Policy</a>
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">Cookies</a>
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">About Adds</a>
+                        <a class="text-[#919191] text-[13px] px-3 hover:text-white transition ease-in-out duration-300 font-semibold" href="#">Accessibility</a>
+                    </div>
+                    <div class="copyright text-end">
+                        <p class="text-[#919191] text-sm font-semibold">© 2023 Asfakul Siam</p>
+                    </div>
+                </div>
+
+
+
+                <!-- content will be added here -->
+
+            </section>
+            <!-- music section end here -->
+        </nav>
+        <footer class="h-[12%] w-screen fixed bottom-0 left-0 p-2 bg-black text-white">
+            <div class="player flex items-center">
+                <div class="player-banner w-[25%] flex items-center">
+                    <div class="image mr-3 w-16 h-16 group relative hover:cursor-pointer">
+                        <div class="w-full h-full absolute left-0 top-0 transform translate-y-full group-hover:translate-y-0">
+                            <a class="absolute top-2 right-3 text-[12px] text-white  bg-slate-700/70 rounded-full text-center transition ease-in-out duration-300" href="#"><i class="fa-solid fa-chevron-up w-5 h-5 opacity-60 hover:scale-105 hover:opacity-100"></i></a>
+                        </div>
+                        <img class="w-[100%] rounded-md" src="/assets/album.png" alt="album">
+                    </div>
+                    <div class="details">
+                        <div class="title">
+                            <a class="font-semibold text-[14px] hover:underline" href="#">Srotoshinni</a>
+                        </div>
+                        <div class="album-name">
+                            <a class="font-medium text-[12px] text-[#919191] hover:text-white hover:underline" href="#">Encore</a>
+                        </div>
+                    </div>
+                    <div class="hearts pl-3">
+                        <span class="text-[#919191] transition ease-in-out duration-300 hover:text-white"><i class="fa-regular fa-heart hover:scale-105"></i></span>
+                    </div>
+                </div>
+                <div class="player-progress w-[50%] h-full">
+                    <div class="player-control flex flex-col gap-2">
+                        <div class="player-icon flex justify-center ">
+                            <button class="mx-2 px-2"><img class="w-[14px] opacity-50 hover:opacity-100" src="/assets/player_icon1.png" alt=""></button>
+                            <button class="mx-2 px-2"><img class="w-[14px] opacity-50 hover:opacity-100" src="/assets/player_icon2.png" alt=""></button>
+                            <button class="mx-2 px-2"><img class="w-[35px] hover:scale-105" src="/assets/player_icon3.png" alt=""></button>
+                            <button class="mx-2 px-2"><img class="w-[14px] opacity-50 hover:opacity-100" src="/assets/player_icon4.png" alt=""></button>
+                            <button class="mx-2 px-2"><img class="w-[14px] opacity-50 hover:opacity-100" src="/assets/player_icon5.png" alt=""></button>
+                        </div>
+                        <div class="progress-bar text-center text-[11px] text-[#919191] font-medium">
+                            <span  >0</span><span id="value" class="curr-time" >1</span><span>:00</span>
+                            <input class="w-[60%] outline-none rounded-full h-[4px] mx-3 accent-white hover:accent-green-500 transi es duration-300" type="range" value="1" min="0" max="3" onchange="rangeValue(this.value)">
+                            <span class="max-time">03:25</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-volume w-[25%] flex items-center justify-end">
+                    <div class="volume-control flex items-center justify-end">
+                        <button class="mx-[6px]"><img class="w-[24px] opacity-80 hover:opacity-100" src="/assets/controls_icon1.png" alt=""></button>
+                        <button class="mx-[6px]"><img class="w-[24px] opacity-80 hover:opacity-100" src="/assets/controld_icon2.png" alt=""></button>
+                        <button class="mx-[6px]"><img class="w-[20px] opacity-75 hover:opacity-100" src="/assets/controls_icon3.png" alt=""></button>
+                        <button class="mx-[6px]"><img class="w-[15px] opacity-75 hover:opacity-100" src="/assets/controls_icon4.png" alt=""></button>
+                    </div>
+                    <div class="mic group flex items-center">
+                        <button class="mx-[6px]"><i class="fa-solid fa-volume-low opacity-50 hover:opacity-100 group-hover:text-white group-hover:opacity-50"></i></button>
+                        <input id="myRange" class="w-[50%] outline-none custom-hide-thumb rounded-full h-[4px] accent-white hover:accent-green-500 group-hover:accent-green-500 transition duration-300" type="range" value="1" min="0" max="3" onchange="rangeValue(this.value)">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
